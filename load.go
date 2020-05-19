@@ -59,6 +59,11 @@ func Discover(project string, extensionpath ...string) []ExtensionInterface {
 	paths := strings.Split(os.Getenv("PATH"), ":")
 
 	for _, path := range extensionpath {
+		if filepath.IsAbs(path) {
+			paths = append(paths, path)
+			continue
+		}
+
 		rel, err := RelativeToCwd(path)
 		if err != nil {
 			continue
