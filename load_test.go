@@ -19,7 +19,7 @@ import (
 	"os"
 	"path/filepath"
 
-	. "github.com/mudler/cobra-extension"
+	. "github.com/mudler/cobra-extensions"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
