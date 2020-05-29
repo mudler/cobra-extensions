@@ -1,4 +1,4 @@
-module github.com/mudler/cobra-extension
+module github.com/mudler/cobra-extensions
 
 go 1.14
 
