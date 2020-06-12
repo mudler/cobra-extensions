@@ -44,7 +44,7 @@ func (e Extension) Path() string {
 func (e Extension) CobraCommand() *cobra.Command {
 	return &cobra.Command{
 		Use:   fmt.Sprintf("%s --help", e.Short()),
-		Short: "",
+		Short: fmt.Sprintf("extension: %s (run to show the extension helper)", e.Short()),
 		Long:  ``,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return e.Exec(args)
