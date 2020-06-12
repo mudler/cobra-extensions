@@ -55,6 +55,9 @@ func (e Extension) CobraCommand() *cobra.Command {
 // Extensions must start with the project tag (e.g. 'myawesomecli-' )
 func Discover(project string, extensionpath ...string) []ExtensionInterface {
 	var result []ExtensionInterface
+
+	// by convention, extensions paths must have a prefix with the name of the project
+	// e.g. 'foo-ext1' 'foo-ext2'
 	projPrefix := fmt.Sprintf("%s-", project)
 	paths := strings.Split(os.Getenv("PATH"), ":")
 
