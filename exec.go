@@ -22,5 +22,5 @@ import (
 
 // Execs an extension. It allows a multi-platform switch in the future
 func (e Extension) Exec(args []string) error {
-	return syscall.Exec(e.Path(), args, os.Environ())
+	return syscall.Exec(e.Path(), append([]string{e.Path()}, args...), os.Environ())
 }
